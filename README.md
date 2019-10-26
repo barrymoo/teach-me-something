@@ -1,18 +1,18 @@
-# Teach me something
+# Teach Me Something About Haskell
 
 I am learning Haskell on [Twitch][twitch]. I am also interested in creating
 educational material for learning Haskell. This repository is an attempt
 to do both!
 
-The series "Teach me something about Haskell" will contain lessons (in
-this repository) and corresponding videos on YouTube. I will use
-_lesson_ to refer to the text and _episode_ to refer to the video.
+The series "Teach me something about Haskell" will contain lessons 
+and corresponding videos on YouTube. I will use
+_lesson_ to refer to the content here and _episode_ to refer to the video.
 Each lesson will be placed in its own directory, containing:
 
 - a `README.md` file explaining some topic with an exercise (one or more)
-- an example solution to the exercise
+- an example solution to the exercises
 - a link to a video where I discuss the lesson with the author and solve
-  the exercise/s
+  the exercises
 
 Are you interested in adding a lesson? See [Contributing](#contributing)
 
@@ -39,7 +39,7 @@ on [my youtube][youtube], and [publish the episode](#episodes).
 
 ## Why should you contribute?
 
-Why not? Maybe your lesson will help someone better understand Haskell.
+Your lesson may help someone better understand Haskell.
 
 <!-- Useful links -->
 [twitch]: https://twitch.tv/chiroptical
