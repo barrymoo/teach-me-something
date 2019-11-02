@@ -131,6 +131,7 @@ dependencies like [this](https://github.com/jappeace/cut-the-crap/blob/master/sh
 
 ## Excersizes
 
+### Clone template repo as a playground
 ### Add lens as a dependency
 ### Now add lens from github as a dependency
 We can snatch any cabal project from github
@@ -138,4 +139,10 @@ and use that instead of whatever is on hackage.
 ### Disable tests of lens
 Sometimes builds fail on this,
 being able to skip this dumb step can get you one step closer out of hell.
+### Replace the reflection library where lens depends upon with the latest from github
+We can replace dependencies from dependencies!
 ### Make a proper release derivation that copies over the resulting binary
+### Add haskell ide engine as a dependency for your shell
+Every project should track it's own development dependencies as well,
+so we have developers all working with the same tools.
+Nobody does this.
