@@ -135,4 +135,7 @@ dependencies like [this](https://github.com/jappeace/cut-the-crap/blob/master/sh
 ### Now add lens from github as a dependency
 We can snatch any cabal project from github
 and use that instead of whatever is on hackage.
-### Make a proper release derivation that just copies over the binary
+### Disable tests of lens
+Sometimes builds fail on this,
+being able to skip this dumb step can get you one step closer out of hell.
+### Make a proper release derivation that copies over the resulting binary
