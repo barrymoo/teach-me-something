@@ -86,8 +86,9 @@ Note what happens to the output path
 ### Put the source code into a sub-directory, modify the builder to handle that
 ### Pin this build
 Always pin.
-#### After pinning, try overriding this pkgs again with the default one
-Checkout the man
+#### After pinning, try overriding the pkgs argument with the default <nixpkgs>
+Checkout the manual.
+This is to show these are just functions to which you can provide arguments.
 ### Show the derivation of this build
 
 # Dependencies
