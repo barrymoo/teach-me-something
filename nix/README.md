@@ -87,8 +87,6 @@ Note what happens to the output path
 ### Pin this build
 Always pin.
 #### After pinning, try overriding the pkgs argument with the default <nixpkgs>
-Checkout the manual.
-This is to show these are just functions to which you can provide arguments.
 ### Show the derivation of this build
 
 # Dependencies
