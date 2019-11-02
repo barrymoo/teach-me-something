@@ -29,11 +29,11 @@ Follow the instructions on: https://nixos.org/nix/download.html
 
 ### 2. How do we decide where to install a nix program?
 
-<input/>
+<input type="text" />
 
 ### 3. Why can you infect your system with nix?
 
-<input/>
+<input type="text" />
 
 ## First Derivation
 A derivation is a description of how a build works.
