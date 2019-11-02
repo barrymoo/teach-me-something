@@ -104,18 +104,20 @@ We specify a dependency with help of [nixpkgs](https://github.com/NixOS/nixpkgs)
 
 ## Exercises
 
-### Swap out that weird xonsh with propper python
+### Swap out that weird xonsh with proper python
 1. find python in nixpkgs
 https://github.com/NixOS/nixpkgs/blob/master/doc/languages-frameworks/python.section.md
 The with keyword pulls in a dictionary into scope as variables.
 2. Rename xonsh to python
-3. modify buildscript
+3. Modify build script
 4. Modify source to not do shell inline
 
-### Try add a python dependency as well such as requests or beautifullsoup
+### Try add a python dependency as well, such as requests or beautifullsoup
 
 
 # Haskell
+We covered the basics, now towards something real.
+
 For normal, non-ghcjs haskell projects
 I'd recommend my
 [template project](https://github.com/jappeace/haskell-template-project)
@@ -124,7 +126,7 @@ repo and push it into a different gihtub repo.
 Effectively forking it.
 
 cabal2nix will generate a `default.nix` file which
-will pull in all haskell based dependencies.
+will pull in all Haskell based dependencies.
 We can then override that default with additional
 dependencies like [this](https://github.com/jappeace/cut-the-crap/blob/master/shell.nix#L4)
 
