@@ -21,8 +21,7 @@ haskell development.
 In other words, if you want to learn nix as a language, go to the nixpills.
 If you want to *use* nix for building, tag along.
 We will go from first "hello-world"
-build up to nixops deployments in cloud infrastructure
-such as AWS.
+to full haskell builds.
 
 ## Excersizes
 
