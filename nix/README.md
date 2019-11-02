@@ -13,29 +13,126 @@ We add the name of the package and some semantic version just for humans.
 This is why you can ~~infect~~ install it alongside practically any linux distribution you want.
 Nix doesn't care what the rest of the system does as long as it can
 write in /nix/store for all the programs.
-For the specific details I'd refer one to the [excelent paper](https://nixos.org/~eelco/pubs/nixos-jfp-final.pdf).
+For the specific details I'd refer one to the [excelent paper](https://grosskurth.ca/bib/2006/dolstra-thesis.pdf).
 It's very readable I think.
 
 In this tutorial we will get the basic use case for nix with an eye on
 haskell development. 
 In other words, if you want to learn nix as a language, go to the nixpills.
 If you want to *use* nix for building, tag along.
-We will go from first "hello-world" build up to nixops deployments in cloud infrastructure such as AWS.
+We will go from first "hello-world"
+build up to nixops deployments in cloud infrastructure
+such as AWS.
 
 ## Excersizes
 
-### 1. Installing Nix
+### Installing Nix
 Follow the instructions on: https://nixos.org/nix/download.html
 
-### 2. How do we decide where to install a nix program?
+### How does nix decide where to install a program?
 
 <input type="text" />
 
-### 3. Why can you infect your system with nix?
+### Why can you install nix alongside your favorite distribution?
 
 <input type="text" />
 
-## First Derivation
-A derivation is a description of how a build works.
-We use the nix programming langauge to describe these derivations.
+# Hello build
+By convention we call the default target for either nix shell or a nix
+build `default.nix`.
+It actually becomes the default target for the directory,
+try building the directory in this folder:
 
+```shell
+nix-build ./1-hello-world
+```
+
+Now you can execute the resulting build.
+The build consists of 3 parts:
+
+1. Source code
+2. The nix espression
+3. The builder script
+
+If we cat `default.nix` we get something like this:
+```nix
+{pkgs ? import <nixpkgs> { } }:
+pkgs.stdenv.mkDerivation{
+  name = "hellow-world";
+  src = ./program.sh;
+  args = ["-e" ./builder.sh];
+}
+```
+
+The langauge itself is pure, untyped and lazy.
+That first line defines a function with an argument pkgs.
+The question mark import indicates that this pkgs argument is filled
+by the running system nixpkgs.
+That's a pretty bad default considering it won't be reproducible anymore.
+This is why we [pin repositories](https://jappieklooster.nl/pinning-nixops-builds.html).
+
+Nix provides us ways of automatically generating
+builders for most langauges, such as haskell, python and c.
+More on that later.
+That `builder.sh` maybe superflous code.
+However this just shows you can completely bypass the defaults
+if you want to.
+While still retaining the properties of nix.
+
+## Excersizes
+
+### Rename the build to something witty or snarky
+### Make the print a better message than hello-world
+Note what happens to the output path
+### Put the source code into a subdirectory, modify the builder to handle that
+### Pin this build
+Always pin.
+#### After pinning, try overriding this pkgs again with the default one
+Checkout the man
+### Show the derivation of this build
+
+# Dependencies
+
+This entire system revolves around managing dependencies so let's do that!
+In here I made a second derivation to build:
+
+```shell
+nix-build ./2-basic-dependency
+```
+
+We specify a dependency with help of [nixpkgs](https://github.com/NixOS/nixpkgs).
+
+
+## Excersizes
+
+### Swap out that weird xonsh with propper python
+#### find python in nixpkgs
+https://github.com/NixOS/nixpkgs/blob/master/doc/languages-frameworks/python.section.md
+The with keyword pulls in a dictionary into scope as variables.
+#### Rename xonsh to python
+#### modify buildscript
+#### Modify source to not do shell inline
+
+### Try add a python dependency aswell such as requests or beautifullsoup
+
+
+# Haskell
+For normal, non-ghcjs haskell projects
+I'd recommend my
+[template project](https://github.com/jappeace/haskell-template-project)
+Whenever I start a new project I just clone that 
+repo and push it into a different gihtub repo.
+Effectively forking it.
+
+cabal2nix will generate a `default.nix` file which
+will pull in all haskell based dependencies.
+We can then override that default with additional
+dependencies like [this](https://github.com/jappeace/cut-the-crap/blob/master/shell.nix#L4)
+
+## Excersizes
+
+### Add lens as a dependency
+### Now add lens from github as a dependency
+We can snatch any cabal project from github
+and use that instead of whatever is on hackage.
+### Make a proper release derivation that just copies over the binary
