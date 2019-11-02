@@ -27,7 +27,13 @@ We will go from first "hello-world" build up to nixops deployments in cloud infr
 ### 1. Installing Nix
 Follow the instructions on: https://nixos.org/nix/download.html
 
-### 2. Why can you infect your system with nix?
+### 2. How do we decide where to install a nix program?
+
+<input/>
+
+### 3. Why can you infect your system with nix?
+
+<input/>
 
 ## First Derivation
 A derivation is a description of how a build works.
