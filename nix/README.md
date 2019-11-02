@@ -15,3 +15,15 @@ it's so radical it doesn't care what the rest of the system does as long as it c
 write in /nix/store for all the programs.
 For the specific details I'd refor one to the [excelent paper](https://nixos.org/~eelco/pubs/nixos-jfp-final.pdf).
 It's very readable I think.
+
+In this tutorial we will get the basic use case for nix with an eye on
+haskell development. 
+In other words, if you want to learn nix as a language, go to the nixpills.
+If you want to *use* nix for building, tag along.
+We will go from crappy first build up to nixops deployments.
+We will also discuss how to navigate nixpkgs, because it's confusing.
+
+## Excersize 1 - Installing Nix
+Follow the instructions on: https://nixos.org/nix/download.html
+
+## First Derivation
