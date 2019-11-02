@@ -105,12 +105,12 @@ We specify a dependency with help of [nixpkgs](https://github.com/NixOS/nixpkgs)
 ## Exercises
 
 ### Swap out that weird xonsh with propper python
-#### find python in nixpkgs
+1. find python in nixpkgs
 https://github.com/NixOS/nixpkgs/blob/master/doc/languages-frameworks/python.section.md
 The with keyword pulls in a dictionary into scope as variables.
-#### Rename xonsh to python
-#### modify buildscript
-#### Modify source to not do shell inline
+2. Rename xonsh to python
+3. modify buildscript
+4. Modify source to not do shell inline
 
 ### Try add a python dependency as well such as requests or beautifullsoup
 
