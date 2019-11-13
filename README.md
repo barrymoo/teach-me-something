@@ -18,7 +18,7 @@ Are you interested in adding a lesson? See [Contributing](#contributing)
 
 ## Past Episodes
 
-No episodes yet :(
+- Episode 0: Nix, Saturday November 16th 10am EST
 
 ## Contributing
 
